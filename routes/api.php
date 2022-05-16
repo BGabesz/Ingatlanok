@@ -2,7 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\IngatlanokController;
+use App\Http\Controllers\KategoriakController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -17,3 +18,7 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::apiResource('ingatlan', IngatlanokController::class);
+Route::apiResource('kategoria', KategoriakController::class);
+/* Route::get("ingatlanindex",[IngatlanokController::class,"index"]); */
